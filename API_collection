@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "fb842f60-0b88-4d47-8968-b93b751f0e5d",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46715953",
+		"_collection_link": "https://aditya-4791522.postman.co/workspace/Aditya's-Workspace~3c6902cf-0130-480b-871d-33bf03baf5c4/collection/46715953-fb842f60-0b88-4d47-8968-b93b751f0e5d?action=share&source=collection_link&creator=46715953"
+	},
+	"item": [
+		{
+			"name": "id_numeric",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check if id is numeric\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.be.a('number');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"packages": {},
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:go-rest-api:token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"test2 adi\",\r\n  \"gender\": \"male\",\r\n  \"email\": \"testadi2@test.com\",\r\n  \"status\": \"active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/users",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"test1 adi\",\r\n  \"gender\": \"male\",\r\n  \"email\": \"testadi1@test.com\",\r\n  \"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gorest.co.in/public/v2/users",
+							"protocol": "https",
+							"host": [
+								"gorest",
+								"co",
+								"in"
+							],
+							"path": [
+								"public",
+								"v2",
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 13 Jul 2025 11:52:27 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "95"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"4aca4c6faf018f3bb684ab4273e637e3\""
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; fullscreen 'self'"
+						},
+						{
+							"key": "Location",
+							"value": "https://gorest.co.in/public/v2/users/8003593"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "90"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "89"
+						},
+						{
+							"key": "X-Ratelimit-Reset",
+							"value": "1"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "134885a1-11ea-4bb2-adfe-76f5c6fc8a1b"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.065760"
+						},
+						{
+							"key": "X-Xss-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cf-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Nel",
+							"value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=5QNFjQL%2BU8fcv%2BMSBY%2Fsbzp6rMpXlBHDRFuP7cAVN9k0ujTLbtZ2X1MUZl1n3HBGtyW5e5ik6wYsckIh4feYmfh17fgHfCLto8giiw%3D%3D\"}]}"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "95e893004fe9e27e-MRS"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 8003593,\n    \"name\": \"test1 adi\",\n    \"email\": \"testadi1@test.com\",\n    \"gender\": \"male\",\n    \"status\": \"active\"\n}"
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check if first user is Active or Not Active\", () => {\r",
+							"    const users = pm.response.json();\r",
+							"\r",
+							"    pm.expect(users).to.be.an('array').that.is.not.empty;\r",
+							"\r",
+							"    const firstUserStatus = users[0].status;\r",
+							"\r",
+							"    if (firstUserStatus === \"active\") {\r",
+							"        console.log(\"Result: Active\");\r",
+							"        pm.environment.set(\"userStatusResult\", \"Active\");\r",
+							"    } else {\r",
+							"        console.log(\"Result: Not Active\");\r",
+							"        pm.environment.set(\"userStatusResult\", \"Not Active\");\r",
+							"    }\r",
+							"\r",
+							"    // Optional assertion if you want the test to pass always:\r",
+							"    pm.expect([\"active\", \"inactive\"]).to.include(firstUserStatus);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a9c2e4c4bdc98e5f778808da76cb6558f4496bd4cc1f4b2ea17daab5467bff13",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/users",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
